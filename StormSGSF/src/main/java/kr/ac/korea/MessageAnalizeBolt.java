@@ -28,6 +28,10 @@ public class MessageAnalizeBolt extends BaseRichBolt {
     public void execute(Tuple tuple) {
         String clientMessage = tuple.getStringByField("clientMessage");
         logger.info("## clientMessage in MessageAnalizeBolt: " + clientMessage);
+
+        /**
+         * Amplitude가 15,000 이상값이면 푸시 알림 메시지를 전송한다.
+         */
     }
 
     @Override
