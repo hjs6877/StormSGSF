@@ -41,13 +41,7 @@ public class SingleSpoutForSocketClient extends BaseRichSpout{
     }
 
     public void nextTuple() {
-        logger.info("## clientMessage in SingleSpoutForSocketClient: " + clientMessage);
-        if(clientMessage == null){
-            clientMessage = "There is no message";
-        }else{
-            this.collector.emit(new Values(clientMessage));
-        }
-
+        this.collector.emit(new Values(clientMessage));
     }
 
     public class ClientHandleRunnable implements Runnable {
